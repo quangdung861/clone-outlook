@@ -162,7 +162,7 @@ const MailPage = () => {
                   <div className="btn-select">
                     <i className="fa-regular fa-file"></i>
                   </div>
-                  <div className="btn-filter">
+                  <div className="btn-filter" style={{marginRight: 12}}>
                     <i className="fa-solid fa-filter"></i>
                   </div>
                 </div>

@@ -67,15 +67,55 @@ export const Container = styled.div`
           outline: none;
           width: 100%;
         }
-        >i.filter {
+        > i.filter {
           display: none;
         }
         &:hover {
-          >i.filter {
+          > i.filter {
             display: block;
             color: #ccc;
             cursor: pointer;
           }
+        }
+      }
+      .btn-box-share-mobile {
+        display: none;
+        height: 48px;
+        width: 48px;
+        padding: 16px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        > i {
+          color: #616161;
+          margin-bottom: -2px;
+        }
+        span {
+          margin-left: 16px;
+          white-space: nowrap;
+        }
+        &:hover {
+          background-color: #fff;
+        }
+      }
+      .btn-more {
+        display: none;
+        height: 48px;
+        width: 48px;
+        padding: 16px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        > i {
+          color: #616161;
+          margin-bottom: -2px;
+        }
+        span {
+          margin-left: 16px;
+          white-space: nowrap;
+        }
+        &:hover {
+          background-color: #fff;
         }
       }
       .list-action {
@@ -85,6 +125,7 @@ export const Container = styled.div`
         flex: 1;
         overflow: hidden;
         width: 0px;
+
         .btn-teams-call {
           height: 48px;
           padding: 16px;
@@ -142,6 +183,30 @@ export const Container = styled.div`
         }
         &:hover {
           background-color: #fff;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .header {
+      &__center {
+        justify-content: space-between;
+        .box-search {
+          display: none;
+        }
+        .btn-mobile {
+          display: flex;
+          align-items: center;
+          .btn-more {
+            display: flex;
+          }
+          .btn-box-share-mobile {
+            display: flex;
+          }
+        }
+        .list-action {
+          display: none;
         }
       }
     }

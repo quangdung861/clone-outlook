@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   .container-email {
     width: 100%;
+    overflow: hidden;
     &__bar {
       .top-bar {
         height: 36px;
@@ -71,6 +72,7 @@ export const Container = styled.div`
         margin: 0 8px;
         border-radius: 4px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        overflow: hidden;
         &__action-list {
           width: 100%;
           display: flex;
@@ -168,7 +170,7 @@ export const Container = styled.div`
       gap: 8px;
       overflow: hidden;
       > .mail-list {
-        width: 320px;
+        min-width: 320px;
         border-radius: 4px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         .mail-list__top {
@@ -250,6 +252,7 @@ export const Container = styled.div`
                 }
                 .sub-name {
                   display: flex;
+                  justify-content: space-between;
                   .time {
                     font-weight: 500;
                     margin-left: 2px;
@@ -310,6 +313,14 @@ export const Container = styled.div`
         background-size: cover;
         border-radius: 4px;
       }
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .mail-list {
+      flex: 1;
+    }
+    .mail-content {
+      display: none;
     }
   }
 `;

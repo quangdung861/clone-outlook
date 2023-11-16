@@ -21,6 +21,15 @@ const Header = () => {
               <i className="fa-solid fa-arrow-down-wide-short filter"></i>
             </div>
 
+            <div className="btn-mobile">
+              <div className="btn-box-share-mobile">
+                <i className="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <div className="btn-more">
+                <i className="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+
             <div className="list-action">
               <div className="btn-teams-call">
                 <i className="fa-solid fa-video"></i>
