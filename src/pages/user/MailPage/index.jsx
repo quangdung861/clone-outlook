@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./styles";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 
 const MailPage = () => {
+  const [isSelectedEmail, setSelectedEmail] = useState(false);
+
   return (
     <S.Wrapper>
       <Header />
@@ -162,7 +164,7 @@ const MailPage = () => {
                   <div className="btn-select">
                     <i className="fa-regular fa-file"></i>
                   </div>
-                  <div className="btn-filter" style={{marginRight: 12}}>
+                  <div className="btn-filter" style={{ marginRight: 12 }}>
                     <i className="fa-solid fa-filter"></i>
                   </div>
                 </div>
@@ -172,7 +174,16 @@ const MailPage = () => {
                 {Array(10)
                   .fill()
                   .map((_, index) => (
-                    <div className="mail-list__content__item" key={index}>
+                    <div
+                      className={
+                        isSelectedEmail === index
+                          ? "mail-list__content__item active"
+                          : "mail-list__content__item"
+                      }
+                      key={index}
+                      onClick={() => setSelectedEmail(index)}
+                    >
+                      <div className="division-selected"></div>
                       <div className="left">
                         <img
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png"
@@ -213,7 +224,76 @@ const MailPage = () => {
               </div>
             </div>
 
-            <div className="mail-content"></div>
+            {isSelectedEmail === false && <div className="mail-content-null"></div>}
+
+            {isSelectedEmail !== false && (
+              <div className="mail-content">
+                <div className="title">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry
+                </div>
+                <div className="main">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png"
+                    alt=""
+                    className="avatar-user"
+                  />
+                  <div className="detail">
+                    <div className="contact-user">
+                      <div className="left">
+                        {`<AvePoint IT <it-tickets@avepoint.freshservice.com>`}
+                      </div>
+                      <div className="right">
+                        <div className="action-list">
+                          <div className="action-item">
+                            <i className="fa-regular fa-face-smile"></i>
+                          </div>
+                          <div className="action-item">
+                            <i className="fa-solid fa-share"></i>
+                          </div>
+                          <div className="action-item">
+                            <i className="fa-solid fa-share"></i>
+                          </div>
+                          <div className="action-item">
+                            <i className="fa-solid fa-share"></i>
+                          </div>
+                          <div className="action-item">
+                            <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="to-user">
+                      <div className="display-name">To: Abel Phan</div>
+                      <div className="time-sent">Thu 11/16/2023 12:34 PM</div>
+                    </div>
+                    <div className="content">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a
+                      type specimen book. It has survived not only five
+                      centuries, but also the leap into electronic typesetting,
+                      remaining essentially unchanged. It was popularised in the
+                      1960s with the release of Letraset sheets containing Lorem
+                      Ipsum passages, and more recently with desktop publishing
+                      software like Aldus PageMaker including versions of Lorem
+                      Ipsum.
+                    </div>
+                    <div className="action">
+                      <div className="btn-reply">
+                        <i className="fa-solid fa-share fa-flip-horizontal"></i>
+                        <span>Reply</span>
+                      </div>
+                      <div className="btn-forward">
+                        <i className="fa-solid fa-share"></i>
+                        <span>Forward</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </S.Container>

@@ -229,8 +229,18 @@ export const Container = styled.div`
             height: 80px;
             overflow: hidden;
             transition: all 0.2s ease;
+            position: relative;
+            .division-selected {
+              display: none;
+              position: absolute;
+              left: 0;
+              width: 8px;
+              height: 100%;
+              background-color: #ccc;
+              z-index: 99;
+            }
             .left {
-              padding: 8px 4px;
+              padding: 8px 4px 8px 12px;
               > img {
                 width: 40px;
                 height: 40px;
@@ -296,15 +306,21 @@ export const Container = styled.div`
             }
             &:hover {
               background-color: #f1f1f1;
+              .division-selected {
+                display: block;
+              }
               .btn-delete {
                 display: flex;
               }
             }
           }
+          .mail-list__content__item.active {
+            background-color: #cfe4fa;
+          }
         }
       }
 
-      > .mail-content {
+      > .mail-content-null {
         flex: 1;
         /* background-color: rgba(0, 0, 0, 0.2); */
         background-blend-mode: multiply; /* Áp dụng chế độ blend */
@@ -312,6 +328,94 @@ export const Container = styled.div`
         background-repeat: no-repeat;
         background-size: cover;
         border-radius: 4px;
+      }
+      > .mail-content {
+        flex: 1;
+        .title {
+          height: 44px;
+          line-height: 44px;
+          padding: 0 12px;
+          width: 100%;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          border: 0.5px solid #f1f1f1;
+          font-size: 16px;
+          font-weight: 500;
+          margin-bottom: 8px;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+        .main {
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          padding: 8px;
+          display: flex;
+          gap: 10px;
+          .avatar-user {
+            width: 40px;
+            height: 40px;
+            margin-left: 4px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            cursor: pointer;
+          }
+          .detail {
+            width: 100%;
+            .contact-user {
+              padding-top: 4px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              .left {
+                font-size: 16px;
+                white-space: nowrap;
+                overflow: hidden;
+              }
+              .right {
+                .action-list {
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  gap: 12px;
+                  margin: 0 8px;
+                  .action-item {
+                    color: #0f6cbd;
+                    font-size: 16px;
+                  }
+                }
+              }
+            }
+            .to-user {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 12px;
+              margin-top: 8px;
+              margin-bottom: 12px;
+            }
+            .content {
+            }
+            .action {
+              display: flex;
+              align-items: center;
+              margin-top: 24px;
+              gap: 12px;
+              > div {
+                padding: 8px 16px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                border: 1px solid #ccc;
+                cursor: pointer;
+                border-radius: 4px;
+                transition: all 0.2s ease;
+                &:hover {
+                  background-color: #ebf3fc;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -322,6 +426,9 @@ export const Container = styled.div`
     }
     .container-email {
       .mail-content {
+        display: none;
+      }
+      .mail-content-null {
         display: none;
       }
     }
