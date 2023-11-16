@@ -170,7 +170,7 @@ export const Container = styled.div`
       gap: 8px;
       overflow: hidden;
       > .mail-list {
-        min-width: 320px;
+        width: 320px;
         border-radius: 4px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         .mail-list__top {
@@ -319,8 +319,10 @@ export const Container = styled.div`
     .mail-list {
       flex: 1;
     }
-    .mail-content {
-      display: none;
+    .container-email {
+      .mail-content {
+        display: none;
+      }
     }
   }
 `;
