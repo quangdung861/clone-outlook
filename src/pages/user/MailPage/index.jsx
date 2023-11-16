@@ -172,8 +172,8 @@ const MailPage = () => {
                 {Array(10)
                   .fill()
                   .map((_, index) => (
-                    <div className="mail-list__content__item">
-                      <div className="left" key={index}>
+                    <div className="mail-list__content__item" key={index}>
+                      <div className="left">
                         <img
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png"
                           alt=""
@@ -206,7 +206,7 @@ const MailPage = () => {
                         </div>
                       </div>
                       <div className="btn-delete">
-                        <i class="fa-regular fa-trash-can"></i>
+                        <i className="fa-regular fa-trash-can"></i>
                       </div>
                     </div>
                   ))}

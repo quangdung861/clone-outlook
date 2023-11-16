@@ -208,7 +208,7 @@ export const Container = styled.div`
           }
         }
         .mail-list__content {
-          height: 100%;
+          height: calc(100% - 44px);
           overflow: hidden;
           overflow-y: overlay;
           &::-webkit-scrollbar {
