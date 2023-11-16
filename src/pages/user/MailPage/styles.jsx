@@ -318,6 +318,7 @@ export const Container = styled.div`
   @media only screen and (max-width: 768px) {
     .mail-list {
       flex: 1;
+      transition: flex 0.4s ease;
     }
     .container-email {
       .mail-content {
